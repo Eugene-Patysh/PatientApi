@@ -1,0 +1,2456 @@
+{
+  "info": {
+    "_postman_id": "d3b6afd1-34b5-4ac1-a56a-d385d5239196",
+    "name": "Patient API",
+    "description": "CRUD api for patient collection\n\nContact Support:\n Name: Eugene Patysh\n Email: eugene.patysh@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "29870824"
+  },
+  "item": [
+    {
+      "name": "api",
+      "item": [
+        {
+          "name": "v1",
+          "item": [
+            {
+              "name": "Patient",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Returns patient record by id.",
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/Patient/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "Patient",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "string",
+                              "description": "patient id"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "Patient found.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "text/plain"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string",
+                                  "description": "patient id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": \"string\",\n  \"name\": {\n    \"id\": \"string\",\n    \"use\": \"string\",\n    \"family\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": 2,\n  \"birthDate\": \"1983-07-28T23:32:10.176Z\",\n  \"active\": true\n}"
+                        },
+                        {
+                          "name": "Patient id is not valid.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string",
+                                  "description": "patient id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Patient doesn`t exist.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string",
+                                  "description": "patient id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Something wrong.",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string",
+                                  "description": "patient id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Removes patient record by id.",
+                      "request": {
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/Patient/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "Patient",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "id",
+                              "value": "string",
+                              "description": "patient id"
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "Patient record deleted successfully.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "text/plain"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string",
+                                  "description": "patient id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": \"string\",\n  \"name\": {\n    \"id\": \"string\",\n    \"use\": \"string\",\n    \"family\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": 2,\n  \"birthDate\": \"1983-07-28T23:32:10.176Z\",\n  \"active\": true\n}"
+                        },
+                        {
+                          "name": "Patient id is not valid.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string",
+                                  "description": "patient id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Patient doesn`t exist.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string",
+                                  "description": "patient id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Something wrong.",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id",
+                                  "value": "string",
+                                  "description": "patient id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "create",
+                  "item": [
+                    {
+                      "name": "Creates new patient entity.",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": {\n    \"use\": \"oficial\",\n    \"family\": \"Ivanov\",\n    \"given\": [\n      \"Ivan\"\n    ]\n  },\n  \"gender\": 0,\n  \"birthDate\": \"2026-02-17T10:54:51.770Z\",\n  \"active\": true\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/Patient/create",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "Patient",
+                            "create"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "Patient record created successfully.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "text/plain"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"string\",\n  \"name\": {\n    \"id\": \"string\",\n    \"use\": \"string\",\n    \"family\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": 2,\n  \"birthDate\": \"1983-07-28T23:32:10.176Z\",\n  \"active\": true\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/create",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "create"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": \"string\",\n  \"name\": {\n    \"id\": \"string\",\n    \"use\": \"string\",\n    \"family\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": 2,\n  \"birthDate\": \"1983-07-28T23:32:10.176Z\",\n  \"active\": true\n}"
+                        },
+                        {
+                          "name": "Patient dto is not valid.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"string\",\n  \"name\": {\n    \"id\": \"string\",\n    \"use\": \"string\",\n    \"family\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": 2,\n  \"birthDate\": \"1983-07-28T23:32:10.176Z\",\n  \"active\": true\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/create",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "create"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Something wrong.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"string\",\n  \"name\": {\n    \"id\": \"string\",\n    \"use\": \"string\",\n    \"family\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": 2,\n  \"birthDate\": \"1983-07-28T23:32:10.176Z\",\n  \"active\": true\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/create",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "create"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "update",
+                  "item": [
+                    {
+                      "name": "Updates new patient entity.",
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"id\": \"string\",\n  \"name\": {\n    \"id\": \"string\",\n    \"use\": \"oficial\",\n    \"family\": \"Ivanov\",\n    \"given\": [\n      \"Ivan\"\n    ]\n  },\n  \"gender\": 0,\n  \"birthDate\": \"2026-02-17T10:54:51.770Z\",\n  \"active\": true\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/Patient/update",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "Patient",
+                            "update"
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "name": "Patient record updated successfully.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "text/plain"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"string\",\n  \"name\": {\n    \"id\": \"string\",\n    \"use\": \"string\",\n    \"family\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": 2,\n  \"birthDate\": \"1983-07-28T23:32:10.176Z\",\n  \"active\": true\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/update",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "update"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "{\n  \"id\": \"string\",\n  \"name\": {\n    \"id\": \"string\",\n    \"use\": \"string\",\n    \"family\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": 2,\n  \"birthDate\": \"1983-07-28T23:32:10.176Z\",\n  \"active\": true\n}"
+                        },
+                        {
+                          "name": "Patient dto is not valid.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"string\",\n  \"name\": {\n    \"id\": \"string\",\n    \"use\": \"string\",\n    \"family\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": 2,\n  \"birthDate\": \"1983-07-28T23:32:10.176Z\",\n  \"active\": true\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/update",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "update"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Something wrong.",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"string\",\n  \"name\": {\n    \"id\": \"string\",\n    \"use\": \"string\",\n    \"family\": \"string\",\n    \"given\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  \"gender\": 2,\n  \"birthDate\": \"1983-07-28T23:32:10.176Z\",\n  \"active\": true\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/update",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "update"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "birthdate",
+                  "item": [
+                    {
+                      "name": "Search by range",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"startFilter\": \"ge2023-01-14\",\n  \"endFilter\": \"le2025-01-14\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "Patient",
+                            "birthdate"
+                          ]
+                        },
+                        "description": "### Available prefixes:\n* **eq**: equal\n* **ne**: not equal\n* **gt**: greater than\n* **lt**: less than\n* **ge**: greater or equal\n* **le**: less or equal\n* **sa**: starts after\n* **eb**: ends before\n* **ap**: approximately\n\n### Date formates: \n* `yyyy-mm-ddThh:mm:ss`\n* `yyyy-mm-ddThh:mm`\n* `yyyy-mm-ddThh`\n* `yyyy-mm-dd`\n* `yyyy-mm`\n* `yyyy`\n\n### Example: `ge2013-01-14`"
+                      },
+                      "response": [
+                        {
+                          "name": "Patients found.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "text/plain"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 1,\n    \"birthDate\": \"2005-06-21T10:26:19.374Z\",\n    \"active\": false\n  },\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 0,\n    \"birthDate\": \"2010-05-28T22:40:26.575Z\",\n    \"active\": false\n  }\n]"
+                        },
+                        {
+                          "name": "Request is not valid.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Something wrong.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Search by Equal filter",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"startFilter\": \"eq2025-01-14\",\n  \"endFilter\": \"\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "Patient",
+                            "birthdate"
+                          ]
+                        },
+                        "description": "### Available prefixes:\n* **eq**: equal\n* **ne**: not equal\n* **gt**: greater than\n* **lt**: less than\n* **ge**: greater or equal\n* **le**: less or equal\n* **sa**: starts after\n* **eb**: ends before\n* **ap**: approximately\n\n### Date formates: \n* `yyyy-mm-ddThh:mm:ss`\n* `yyyy-mm-ddThh:mm`\n* `yyyy-mm-ddThh`\n* `yyyy-mm-dd`\n* `yyyy-mm`\n* `yyyy`\n\n### Example: `ge2013-01-14`"
+                      },
+                      "response": [
+                        {
+                          "name": "Patients found.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "text/plain"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 1,\n    \"birthDate\": \"2005-06-21T10:26:19.374Z\",\n    \"active\": false\n  },\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 0,\n    \"birthDate\": \"2010-05-28T22:40:26.575Z\",\n    \"active\": false\n  }\n]"
+                        },
+                        {
+                          "name": "Request is not valid.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Something wrong.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Search by NotEqual filter",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"startFilter\": \"ne2025-01-14\",\n  \"endFilter\": \"\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "Patient",
+                            "birthdate"
+                          ]
+                        },
+                        "description": "### Available prefixes:\n* **eq**: equal\n* **ne**: not equal\n* **gt**: greater than\n* **lt**: less than\n* **ge**: greater or equal\n* **le**: less or equal\n* **sa**: starts after\n* **eb**: ends before\n* **ap**: approximately\n\n### Date formates: \n* `yyyy-mm-ddThh:mm:ss`\n* `yyyy-mm-ddThh:mm`\n* `yyyy-mm-ddThh`\n* `yyyy-mm-dd`\n* `yyyy-mm`\n* `yyyy`\n\n### Example: `ge2013-01-14`"
+                      },
+                      "response": [
+                        {
+                          "name": "Patients found.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "text/plain"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 1,\n    \"birthDate\": \"2005-06-21T10:26:19.374Z\",\n    \"active\": false\n  },\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 0,\n    \"birthDate\": \"2010-05-28T22:40:26.575Z\",\n    \"active\": false\n  }\n]"
+                        },
+                        {
+                          "name": "Request is not valid.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Something wrong.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Search by GreaterThan filter",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"startFilter\": \"gt2024-01-14\",\n  \"endFilter\": \"\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "Patient",
+                            "birthdate"
+                          ]
+                        },
+                        "description": "### Available prefixes:\n* **eq**: equal\n* **ne**: not equal\n* **gt**: greater than\n* **lt**: less than\n* **ge**: greater or equal\n* **le**: less or equal\n* **sa**: starts after\n* **eb**: ends before\n* **ap**: approximately\n\n### Date formates: \n* `yyyy-mm-ddThh:mm:ss`\n* `yyyy-mm-ddThh:mm`\n* `yyyy-mm-ddThh`\n* `yyyy-mm-dd`\n* `yyyy-mm`\n* `yyyy`\n\n### Example: `ge2013-01-14`"
+                      },
+                      "response": [
+                        {
+                          "name": "Patients found.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "text/plain"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 1,\n    \"birthDate\": \"2005-06-21T10:26:19.374Z\",\n    \"active\": false\n  },\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 0,\n    \"birthDate\": \"2010-05-28T22:40:26.575Z\",\n    \"active\": false\n  }\n]"
+                        },
+                        {
+                          "name": "Request is not valid.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Something wrong.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Search by LessThan filter",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"startFilter\": \"lt2024-01-14\",\n  \"endFilter\": \"\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "Patient",
+                            "birthdate"
+                          ]
+                        },
+                        "description": "### Available prefixes:\n* **eq**: equal\n* **ne**: not equal\n* **gt**: greater than\n* **lt**: less than\n* **ge**: greater or equal\n* **le**: less or equal\n* **sa**: starts after\n* **eb**: ends before\n* **ap**: approximately\n\n### Date formates: \n* `yyyy-mm-ddThh:mm:ss`\n* `yyyy-mm-ddThh:mm`\n* `yyyy-mm-ddThh`\n* `yyyy-mm-dd`\n* `yyyy-mm`\n* `yyyy`\n\n### Example: `ge2013-01-14`"
+                      },
+                      "response": [
+                        {
+                          "name": "Patients found.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "text/plain"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 1,\n    \"birthDate\": \"2005-06-21T10:26:19.374Z\",\n    \"active\": false\n  },\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 0,\n    \"birthDate\": \"2010-05-28T22:40:26.575Z\",\n    \"active\": false\n  }\n]"
+                        },
+                        {
+                          "name": "Request is not valid.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Something wrong.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Search by GreaterOrEqual filter",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"startFilter\": \"ge2024-01-14\",\n  \"endFilter\": \"\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "Patient",
+                            "birthdate"
+                          ]
+                        },
+                        "description": "### Available prefixes:\n* **eq**: equal\n* **ne**: not equal\n* **gt**: greater than\n* **lt**: less than\n* **ge**: greater or equal\n* **le**: less or equal\n* **sa**: starts after\n* **eb**: ends before\n* **ap**: approximately\n\n### Date formates: \n* `yyyy-mm-ddThh:mm:ss`\n* `yyyy-mm-ddThh:mm`\n* `yyyy-mm-ddThh`\n* `yyyy-mm-dd`\n* `yyyy-mm`\n* `yyyy`\n\n### Example: `ge2013-01-14`"
+                      },
+                      "response": [
+                        {
+                          "name": "Patients found.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "text/plain"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 1,\n    \"birthDate\": \"2005-06-21T10:26:19.374Z\",\n    \"active\": false\n  },\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 0,\n    \"birthDate\": \"2010-05-28T22:40:26.575Z\",\n    \"active\": false\n  }\n]"
+                        },
+                        {
+                          "name": "Request is not valid.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Something wrong.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Search by LessOrEqual filter",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"startFilter\": \"le2024-01-14\",\n  \"endFilter\": \"\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "Patient",
+                            "birthdate"
+                          ]
+                        },
+                        "description": "### Available prefixes:\n* **eq**: equal\n* **ne**: not equal\n* **gt**: greater than\n* **lt**: less than\n* **ge**: greater or equal\n* **le**: less or equal\n* **sa**: starts after\n* **eb**: ends before\n* **ap**: approximately\n\n### Date formates: \n* `yyyy-mm-ddThh:mm:ss`\n* `yyyy-mm-ddThh:mm`\n* `yyyy-mm-ddThh`\n* `yyyy-mm-dd`\n* `yyyy-mm`\n* `yyyy`\n\n### Example: `ge2013-01-14`"
+                      },
+                      "response": [
+                        {
+                          "name": "Patients found.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "text/plain"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 1,\n    \"birthDate\": \"2005-06-21T10:26:19.374Z\",\n    \"active\": false\n  },\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 0,\n    \"birthDate\": \"2010-05-28T22:40:26.575Z\",\n    \"active\": false\n  }\n]"
+                        },
+                        {
+                          "name": "Request is not valid.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Something wrong.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Search by StartsAfter filter",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"startFilter\": \"sa2024-01-14\",\n  \"endFilter\": \"\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "Patient",
+                            "birthdate"
+                          ]
+                        },
+                        "description": "### Available prefixes:\n* **eq**: equal\n* **ne**: not equal\n* **gt**: greater than\n* **lt**: less than\n* **ge**: greater or equal\n* **le**: less or equal\n* **sa**: starts after\n* **eb**: ends before\n* **ap**: approximately\n\n### Date formates: \n* `yyyy-mm-ddThh:mm:ss`\n* `yyyy-mm-ddThh:mm`\n* `yyyy-mm-ddThh`\n* `yyyy-mm-dd`\n* `yyyy-mm`\n* `yyyy`\n\n### Example: `ge2013-01-14`"
+                      },
+                      "response": [
+                        {
+                          "name": "Patients found.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "text/plain"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 1,\n    \"birthDate\": \"2005-06-21T10:26:19.374Z\",\n    \"active\": false\n  },\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 0,\n    \"birthDate\": \"2010-05-28T22:40:26.575Z\",\n    \"active\": false\n  }\n]"
+                        },
+                        {
+                          "name": "Request is not valid.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Something wrong.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Search by EndsBefore filter",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"startFilter\": \"eb2024-01-14\",\n  \"endFilter\": \"\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "Patient",
+                            "birthdate"
+                          ]
+                        },
+                        "description": "### Available prefixes:\n* **eq**: equal\n* **ne**: not equal\n* **gt**: greater than\n* **lt**: less than\n* **ge**: greater or equal\n* **le**: less or equal\n* **sa**: starts after\n* **eb**: ends before\n* **ap**: approximately\n\n### Date formates: \n* `yyyy-mm-ddThh:mm:ss`\n* `yyyy-mm-ddThh:mm`\n* `yyyy-mm-ddThh`\n* `yyyy-mm-dd`\n* `yyyy-mm`\n* `yyyy`\n\n### Example: `ge2013-01-14`"
+                      },
+                      "response": [
+                        {
+                          "name": "Patients found.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "text/plain"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 1,\n    \"birthDate\": \"2005-06-21T10:26:19.374Z\",\n    \"active\": false\n  },\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 0,\n    \"birthDate\": \"2010-05-28T22:40:26.575Z\",\n    \"active\": false\n  }\n]"
+                        },
+                        {
+                          "name": "Request is not valid.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Something wrong.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Search by Approximately filter",
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "text/plain"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"startFilter\": \"ap2024-01-14\",\n  \"endFilter\": \"\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "api",
+                            "v1",
+                            "Patient",
+                            "birthdate"
+                          ]
+                        },
+                        "description": "### Available prefixes:\n* **eq**: equal\n* **ne**: not equal\n* **gt**: greater than\n* **lt**: less than\n* **ge**: greater or equal\n* **le**: less or equal\n* **sa**: starts after\n* **eb**: ends before\n* **ap**: approximately\n\n### Date formates: \n* `yyyy-mm-ddThh:mm:ss`\n* `yyyy-mm-ddThh:mm`\n* `yyyy-mm-ddThh`\n* `yyyy-mm-dd`\n* `yyyy-mm`\n* `yyyy`\n\n### Example: `ge2013-01-14`"
+                      },
+                      "response": [
+                        {
+                          "name": "Patients found.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "text/plain"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 1,\n    \"birthDate\": \"2005-06-21T10:26:19.374Z\",\n    \"active\": false\n  },\n  {\n    \"id\": \"string\",\n    \"name\": {\n      \"id\": \"string\",\n      \"use\": \"string\",\n      \"family\": \"string\",\n      \"given\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    \"gender\": 0,\n    \"birthDate\": \"2010-05-28T22:40:26.575Z\",\n    \"active\": false\n  }\n]"
+                        },
+                        {
+                          "name": "Request is not valid.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        },
+                        {
+                          "name": "Something wrong.",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"startFilter\": \"string\",\n  \"endFilter\": \"string\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/api/v1/Patient/birthdate",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "api",
+                                "v1",
+                                "Patient",
+                                "birthdate"
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "body": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}
