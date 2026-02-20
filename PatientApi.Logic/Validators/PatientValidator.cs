@@ -10,7 +10,7 @@ namespace PatientApi.Logic.Validators
             RuleFor(p => p).NotNull().WithMessage("patient model can't be null.");
             RuleFor(p => p.Name).NotNull().WithMessage("Name info can't be null.");
             RuleFor(p => p.Name.Family).Must(f => !string.IsNullOrEmpty(f)).WithMessage("Family name can't be null.");
-            RuleFor(p => p.BirthDate).NotNull().WithMessage("Birth date can't be null.");
+            RuleFor(p => p.BirthDate).Must(date => date != default(DateTime)).WithMessage("Birth date can't be null.");
 
             RuleSet("Add", () =>
             {

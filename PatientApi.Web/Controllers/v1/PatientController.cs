@@ -1,6 +1,7 @@
 using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using PatientApi.Logic.Models;
+using PatientApi.Logic.Models.Exceptions;
 using PatientApi.Logic.Services;
 using PatientApi.Logic.Validators;
 using Swashbuckle.AspNetCore.Annotations;
@@ -15,12 +16,15 @@ namespace PatientApi.Web.Controllers.v1
     {
         private readonly IPatientService _patientService;
         private readonly ICustomValidator<PatientDto> _validator;
+        private readonly ICustomValidator<SearchByBirthDateRequest> _birthDateValidator;
 
         public PatientController(IPatientService patientService,
-            ICustomValidator<PatientDto> validator)
+            ICustomValidator<PatientDto> validator,
+            ICustomValidator<SearchByBirthDateRequest> birthDateValidator)
         {
             _patientService = patientService;
             _validator = validator;
+            _birthDateValidator = birthDateValidator;
         }
 
         /// <summary>
@@ -37,7 +41,7 @@ namespace PatientApi.Web.Controllers.v1
         {
             if (string.IsNullOrEmpty(id))
             {
-                return BadRequest("Patient id is not valid.");
+                throw new AppValidationException("Patient id is not valid.");
             }
 
             return Ok(await _patientService.GetByIdAsync(id));
@@ -89,7 +93,7 @@ namespace PatientApi.Web.Controllers.v1
         {
             if (string.IsNullOrEmpty(id))
             {
-                return BadRequest("Patient id is not valid.");
+                throw new AppValidationException("Patient id is not valid.");
             }
 
             await _patientService.DeleteAsync(id);
@@ -130,11 +134,7 @@ namespace PatientApi.Web.Controllers.v1
         [SwaggerResponse(500, "Something wrong.")]
         public async Task<ActionResult<List<PatientDto>>> SearchByBirthDateAsync([FromBody] SearchByBirthDateRequest request)
         {
-            // TODO: also validate string on correct date format
-            if (string.IsNullOrEmpty(request?.StartFilter) && string.IsNullOrEmpty(request?.EndFilter))
-            {
-                return BadRequest("Request is not valid.");
-            }
+            await _birthDateValidator.ValidateAsync(request, "");
 
             return Ok(await _patientService.GetByBirthDateAsync(request));
         }

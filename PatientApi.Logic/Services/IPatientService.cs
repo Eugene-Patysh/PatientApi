@@ -9,6 +9,6 @@ namespace PatientApi.Logic.Services
         Task<PatientDto> CreateAsync(PatientDto dto);
         Task<PatientDto> UpdateAsync(PatientDto dto);
         Task DeleteAsync(string id);
-        Task<IEnumerable<PatientEntity>> GetByBirthDateAsync(SearchByBirthDateRequest request);
+        Task<IEnumerable<PatientDto>> GetByBirthDateAsync(SearchByBirthDateRequest request);
     }
 }

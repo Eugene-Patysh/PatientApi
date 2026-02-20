@@ -1,8 +1,7 @@
-﻿using PatientApi.Data.Entities;
-using PatientApi.Data.Repositories;
+﻿using PatientApi.Data.Repositories;
 using PatientApi.Logic.DtoBuilders;
 using PatientApi.Logic.Models;
-using System.ComponentModel.DataAnnotations;
+using PatientApi.Logic.Models.Exceptions;
 
 namespace PatientApi.Logic.Services
 {
@@ -20,7 +19,7 @@ namespace PatientApi.Logic.Services
 
         public async Task<PatientDto> GetByIdAsync(string id)
         {
-            var entity = (await _patientRepository.GetByIdAsync(id)) ?? throw new ValidationException("Patient not found");
+            var entity = (await _patientRepository.GetByIdAsync(id)) ?? throw new AppNotFoundException("Patient not found");
 
             return _patientBuilder.Build(entity);
         }
@@ -48,9 +47,11 @@ namespace PatientApi.Logic.Services
             await _patientRepository.DeleteAsync(id);
         }
 
-        public async Task<IEnumerable<PatientEntity>> GetByBirthDateAsync(SearchByBirthDateRequest request)
+        public async Task<IEnumerable<PatientDto>> GetByBirthDateAsync(SearchByBirthDateRequest request)
         {
-            return await _patientRepository.GetByBirthDateAsync(request.StartFilter, request.EndFilter);
+            var entities = await _patientRepository.GetByBirthDateAsync(request.StartFilter, request.EndFilter);
+
+            return entities?.Select(e => _patientBuilder.Build(e)) ?? new List<PatientDto>();
         }
     }
 }

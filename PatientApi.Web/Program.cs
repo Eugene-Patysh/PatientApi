@@ -1,5 +1,6 @@
 using Asp.Versioning;
 using PatientApi.Web.Configurations;
+using PatientApi.Web.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,7 +32,10 @@ SwaggerConfiguratin.Use(app);
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+// global error handler
+app.UseMiddleware<ErrorHandlerMiddleware>();
+
+// app.UseAuthorization();
 
 app.MapControllers();
 

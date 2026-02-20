@@ -57,7 +57,7 @@ namespace PatientApi.Data.Extentions
             if (string.IsNullOrWhiteSpace(input) || input.Length < 4)
                 return (Prefix.None, string.Empty);
 
-            string prefixStr = input.Substring(0, 2);
+            string prefixStr = input.Substring(0, 2).ToLower();
 
             var prefix = prefixStr switch
             {
@@ -86,11 +86,17 @@ namespace PatientApi.Data.Extentions
         /// <returns></returns>
         private static (DateTime? start, DateTime? end) GetStartEndDate(string dateStr)
         {
+            int length = dateStr.Trim().Length;
+
+            if (dateStr.Length == 4) // 'yyyy' can't be parsed, change to 'yyyy-mm' format
+            {
+                dateStr = $"{dateStr}-01";
+            }
+
             if (!DateTime.TryParse(dateStr, out DateTime start))
                 return (null, null);
 
             DateTime end;
-            int length = dateStr.Trim().Length;
 
             if (length <= 4) // yyyy
             {

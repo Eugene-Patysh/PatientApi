@@ -33,6 +33,8 @@ namespace PatientApi.Web.Configurations
             // Validators
             builder.Services.AddTransient<IValidator<PatientDto>, PatientValidator>();
             builder.Services.AddTransient<ICustomValidator<PatientDto>, CustomValidator<PatientDto>>();
+            builder.Services.AddTransient<IValidator<SearchByBirthDateRequest>, SearchByBirthDateRequestValidator>();
+            builder.Services.AddTransient<ICustomValidator<SearchByBirthDateRequest>, CustomValidator<SearchByBirthDateRequest>>();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using PatientApi.Logic.Models.Exceptions;
 
 namespace PatientApi.Logic.Validators
 {
@@ -14,8 +15,18 @@ namespace PatientApi.Logic.Validators
         public async Task ValidateAsync(T objectDto, string ruleSetName)
         {
             var validationResult = await _validator.ValidateAsync(objectDto, v => v.IncludeRulesNotInRuleSet().IncludeRuleSets(ruleSetName));
+
             if (!validationResult.IsValid)
-                throw new ValidationException(validationResult.Errors.ToString());
+            {
+                var errors = validationResult.Errors
+                    .GroupBy(e => e.PropertyName)
+                    .ToDictionary(
+                        g => g.Key,
+                        g => g.Select(e => e.ErrorMessage).ToArray()
+                    );
+
+                throw new AppValidationException("Bad request", errors);
+            }
         }
     }
 }
